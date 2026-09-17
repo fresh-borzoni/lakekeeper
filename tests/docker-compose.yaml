@@ -74,6 +74,8 @@ services:
         condition: service_healthy
     volumes:
       - .:/opt/tests
+      # The dataset suite installs the SDK from source.
+      - ../python:/opt/python:ro
     networks:
       - iceberg_rest_tests
 
